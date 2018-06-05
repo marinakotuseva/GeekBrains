@@ -1,17 +1,18 @@
-    var t1 = +process.argv[2];
-    var t2 = +process.argv[3];
+    var t1 = Number(process.argv[2]);
+    var t2 = Number(process.argv[3]);
     function timeWords(){
-        var res = "";
-        var sum = t1 + t2;
+        var res, str, sum;
+        res = "";
+        sum = t1 + t2;
         if (sum >= 3600) {
             var hours = Math.floor(sum/3600);
             if (hours === 1) {
-                str = ' час ';
+                str = " час ";
                 } else {
                 if (hours > 1 && hours  <= 4) {
-                    str = ' часа ';
+                    str = " часа ";
                 } else {
-                    str = ' часов ';
+                    str = " часов ";
                 }
             }
             res = res + hours + str;
@@ -20,12 +21,12 @@
         if (sum >= 60) {
             var minutes = Math.floor(sum/60);
             if (minutes === 1) {
-                str = ' минута ';
+                str = " минута ";
             } else {
                 if (minutes > 1 && minutes  <= 4) {
-                    str = ' минуты ';
+                    str = " минуты ";
                 } else {
-                    str = ' минут ';
+                    str = " минут ";
                 }
             }
             res = res + minutes + str;
@@ -35,19 +36,19 @@
             var seconds = sum;
             if (seconds > 0) {
                 if (seconds === 1) {
-                    str = ' секунда ';
+                    str = " секунда";
                 } else {
                     if (seconds > 1 && seconds  <= 4) {
-                        str = ' секунды ';
+                        str = " секунды";
                     } else {
-                        str = ' секунд';
+                        str = " секунд";
                     }
                 }
                 res = res + seconds + str;
             }
         }
-        if (res === '') {
-            res = '0 секунд';
+        if (res === "") {
+            res = "0 секунд";
         }
         return res;
     }

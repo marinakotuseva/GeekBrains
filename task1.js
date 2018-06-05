@@ -2,7 +2,7 @@
     var e = process.argv[3];
     var i, sum;
     sum = 0;
-    for (i = 1; i <= n; i++){
+    for (i = 1; i <= n; i+= 1){
       sum = sum + Math.pow(i,e);
     }
     process.stdout.write(sum.toString());
