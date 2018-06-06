@@ -10,4 +10,4 @@
         return sum.toString();
     }
 
-    process.stdout.write(getSum(n,e)));
+    process.stdout.write(getSum(n,e));
