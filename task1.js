@@ -1,8 +1,13 @@
     var n = process.argv[2];
     var e = process.argv[3];
-    var i, sum;
-    sum = 0;
-    for (i = 1; i <= n; i+= 1){
-      sum = sum + Math.pow(i,e);
+	
+    function getSum(n,e){
+        var i, sum;
+        sum = 0;
+        for (i = 1; i <= n; i+= 1){
+            sum += Math.pow(i,e);
+        }
+        return sum.toString();
     }
-    process.stdout.write(sum.toString());
+
+    process.stdout.write(getSum(n,e)));

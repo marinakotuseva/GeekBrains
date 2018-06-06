@@ -6,7 +6,7 @@
     // option 1
     for (i = 0; i < s.length; i+= 1) {
         code = s.charCodeAt(i);
-        if (code < 123 && code > 64) {
+        if ((code >= 65 && code <= 90) || (code >=97 && code <= 122) ) {
             code += k;
         }
         newString += String.fromCharCode(code);
