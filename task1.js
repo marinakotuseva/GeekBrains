@@ -1,6 +1,5 @@
     var n = process.argv[2];
     var e = process.argv[3];
-	
     function getSum(n,e){
         var i, sum;
         sum = 0;
@@ -9,5 +8,4 @@
         }
         return sum.toString();
     }
-
-    process.stdout.write(getSum(n,e));
+    console.log(getSum(n,e));
