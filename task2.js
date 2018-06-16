@@ -1,24 +1,24 @@
     var s = process.argv[2];
     var k = process.argv[3];
-    function encode(s, k){
+    var lowCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+    var alphLength = lowCaseLetters.length;
+    function encode(){
+        var pos,i;
         var newString = "";
-        var i,code;
-        for (i = 0; i < s.length; i+= 1) {
-            code = s.charCodeAt(i);
-            if (code >= 65 && code <= 90) {
-                code += k;
-                if (code > 90) {
-                    code = 65 + (code - 65)%26;
-                }
+        for (i=0; i < s.length; i+=1)
+        {
+            pos = lowCaseLetters.indexOf(s[i].toLowerCase());
+            if(pos !== -1){
+              if (s[i].toLowerCase() === s[i]) {
+                newString += lowCaseLetters[(pos + k) % (alphLength )];
+              } else {
+                 newString += (lowCaseLetters[(pos + k) % (alphLength )]).toUpperCase();
+              }
+            }           
+            else {
+                newString += s[i];
             }
-            if (code >=97 && code <= 122) {
-                code += k;
-                if (code > 122) {
-                    code = 97 + (code - 97)%26;
-                }
-            }
-            newString += String.fromCharCode(code);
-        }
-        return newString;
+      }
+      console.log(newString);
     }
-    console.log(encode(s,k));
+    encode();
